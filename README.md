@@ -1,46 +1,110 @@
-# Lab 04 - Liste des taches Android
+# Android Lab 04
 
-Application Android simple en Java pour pratiquer :
+Lab 04 is a simple Android task list application built with Java and XML layouts.
 
-- la creation d'une interface XML avec `EditText`, `Spinner`, `Button` et `ListView`
-- l'ajout dynamique d'elements dans une liste avec `ArrayAdapter`
-- la navigation vers un deuxieme ecran avec `Intent`
-- la recuperation des donnees envoyees avec les extras
-- la suppression d'un element avec un appui long
+The goal of this lab is to practice working with form inputs, a spinner, a dynamic `ListView`, and navigation between two activities using `Intent` extras.
 
-## Fonctionnalites
+## Screenshots
 
-- Affiche trois taches d'exemple au demarrage.
-- Permet d'ajouter une nouvelle tache avec un titre, une description et une priorite.
-- Met a jour le compteur de taches.
-- Ouvre un ecran detail quand on touche une tache.
-- Supprime une tache avec un appui long.
-- Le bouton `Vider` efface seulement les champs de saisie.
+### Main screen
 
-## Structure principale
+![Main screen](docs/screenshots/main.png)
 
-- `MainActivity.java` : gere le formulaire, la liste, l'ajout et la suppression.
-- `Screen2Activity.java` : affiche les details de la tache selectionnee.
-- `activity_main.xml` : interface de saisie et `ListView`.
-- `activity_screen2.xml` : interface de l'ecran detail.
+### Task details screen
 
-## Test manuel
+![Task details screen](docs/screenshots/detail.png)
 
-1. Ouvrir le dossier `Lab04` dans Android Studio.
-2. Laisser Gradle synchroniser le projet.
-3. Lancer l'application sur un emulateur ou un telephone Android.
-4. Verifier que trois taches d'exemple sont affichees.
-5. Saisir un titre, une description, choisir une priorite, puis cliquer sur `Ajouter`.
-6. Verifier que la nouvelle tache apparait dans la liste et que le compteur augmente.
-7. Toucher une tache pour ouvrir l'ecran detail.
-8. Cliquer sur `Retour` pour revenir a la liste.
-9. Faire un appui long sur une tache et verifier qu'elle est supprimee.
-10. Cliquer sur `Ajouter` sans titre et verifier le message d'erreur.
+## What The App Does
 
-## Commande de verification
+- Shows a list of starter tasks when the app opens.
+- Lets the user enter a task title and description.
+- Lets the user choose a priority: `Basse`, `Moyenne`, or `Haute`.
+- Adds the new task to the list.
+- Updates the task counter after each add or delete action.
+- Opens a second screen when the user taps a task.
+- Shows the selected task title, priority, and description on the detail screen.
+- Deletes a task when the user long-presses it.
 
-Depuis le dossier `Lab04` :
+## Project Structure
+
+```text
+Lab04/
+  app/
+    src/
+      main/
+        java/com/example/lab04/
+          MainActivity.java
+          Screen2Activity.java
+        res/layout/
+          activity_main.xml
+          activity_screen2.xml
+        res/values/
+          strings.xml
+```
+
+## Main Files
+
+`MainActivity.java`
+
+Handles the main screen. It reads values from the inputs, adds tasks to an `ArrayList`, refreshes the `ListView`, opens the detail screen, and deletes tasks with a long press.
+
+`Screen2Activity.java`
+
+Receives the selected task using `Intent` extras and displays its details.
+
+`activity_main.xml`
+
+Contains the task form, priority spinner, buttons, counter, and list.
+
+`activity_screen2.xml`
+
+Contains the detail view for one selected task.
+
+## How To Run
+
+Open the `Lab04` folder in Android Studio, wait for Gradle sync, then run the app on an emulator or Android phone.
+
+You can also build it from PowerShell:
+
+```powershell
+cd "C:\Users\User\Documents\Web and mobile 2\android-cert\Lab04"
+.\gradlew.bat assembleDebug
+```
+
+To install it on a connected emulator or phone:
+
+```powershell
+.\gradlew.bat installDebug
+```
+
+## Manual Test
+
+1. Open the app.
+2. Confirm that three starter tasks are displayed.
+3. Enter a task title.
+4. Enter a task description.
+5. Select a priority.
+6. Press `Ajouter`.
+7. Confirm that the new task appears in the list.
+8. Confirm that the task counter increases.
+9. Tap a task.
+10. Confirm that the detail screen opens with the correct title, priority, and description.
+11. Press `Retour`.
+12. Long-press a task.
+13. Confirm that the task is removed and the counter decreases.
+14. Try pressing `Ajouter` with an empty title.
+15. Confirm that an error message appears.
+
+## Verification
+
+The project was verified with:
 
 ```powershell
 .\gradlew.bat assembleDebug
+```
+
+Result:
+
+```text
+BUILD SUCCESSFUL
 ```
