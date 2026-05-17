@@ -6,13 +6,10 @@ The goal of this lab is to practice working with form inputs, a spinner, a dynam
 
 ## Screenshots
 
-### Main screen
-
-![Main screen](docs/screenshots/main.png)
-
-### Task details screen
-
-![Task details screen](docs/screenshots/detail.png)
+<p>
+  <img src="https://raw.githubusercontent.com/00zkr/android-lab04/main/docs/screenshots/main.png" alt="Main screen" width="260">
+  <img src="https://raw.githubusercontent.com/00zkr/android-lab04/main/docs/screenshots/detail.png" alt="Task details screen" width="260">
+</p>
 
 ## What The App Does
 
@@ -67,7 +64,7 @@ Open the `Lab04` folder in Android Studio, wait for Gradle sync, then run the ap
 You can also build it from PowerShell:
 
 ```powershell
-cd "C:\Users\User\Documents\Web and mobile 2\android-cert\Lab04"
+cd Lab04
 .\gradlew.bat assembleDebug
 ```
 
