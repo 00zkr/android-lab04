@@ -7,8 +7,8 @@ The goal of this lab is to practice working with form inputs, a spinner, a dynam
 ## Screenshots
 
 <p>
-  <img src="https://raw.githubusercontent.com/00zkr/android-lab04/main/docs/screenshots/main.png" alt="Main screen" width="260">
-  <img src="https://raw.githubusercontent.com/00zkr/android-lab04/main/docs/screenshots/detail.png" alt="Task details screen" width="260">
+<img width="1080" height="2400" alt="main" src="https://github.com/user-attachments/assets/6c4c842f-b674-43ca-a169-93370676baf6" />
+<img width="1080" height="2400" alt="detail" src="https://github.com/user-attachments/assets/f644c27b-5ad9-4231-8dac-b4cda1d5f5ce" />
 </p>
 
 ## What The App Does
