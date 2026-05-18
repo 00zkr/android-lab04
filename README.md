@@ -1,107 +1,67 @@
-# Android Lab 04
+# Task List Android App
 
-Lab 04 is a simple Android task list application built with Java and XML layouts.
-
-The goal of this lab is to practice working with form inputs, a spinner, a dynamic `ListView`, and navigation between two activities using `Intent` extras.
-
-## Screenshots
+A small Android application for creating and managing simple tasks. It provides a clean two-screen flow where users can add tasks, assign priorities, inspect task details, and remove completed items from the list.
 
 <p>
-<img width="400" alt="main" src="https://github.com/user-attachments/assets/6c4c842f-b674-43ca-a169-93370676baf6" />
-<img width="400"  alt="detail" src="https://github.com/user-attachments/assets/f644c27b-5ad9-4231-8dac-b4cda1d5f5ce" />
+  <img width="320" alt="Task list screen" src="https://github.com/user-attachments/assets/6c4c842f-b674-43ca-a169-93370676baf6" />
+  <img width="320" alt="Task details screen" src="https://github.com/user-attachments/assets/f644c27b-5ad9-4231-8dac-b4cda1d5f5ce" />
 </p>
 
-## What The App Does
+## Overview
 
-- Shows a list of starter tasks when the app opens.
-- Lets the user enter a task title and description.
-- Lets the user choose a priority: `Basse`, `Moyenne`, or `Haute`.
-- Adds the new task to the list.
-- Updates the task counter after each add or delete action.
-- Opens a second screen when the user taps a task.
-- Shows the selected task title, priority, and description on the detail screen.
-- Deletes a task when the user long-presses it.
+Task List Android App is built with Java and XML layouts. The project focuses on essential Android development concepts, including activity navigation, intent extras, form handling, list rendering, and simple state management inside an activity.
+
+## Features
+
+- Create a task with a title and description.
+- Assign a priority level: `Basse`, `Moyenne`, or `Haute`.
+- Display tasks in a dynamic `ListView`.
+- Keep a live counter of total tasks.
+- Open a separate details screen for each task.
+- Remove a task with a long press.
+- Show user feedback with Android `Toast` messages.
+
+## Tech Stack
+
+- Java
+- Android SDK
+- XML layouts
+- AppCompat
+- Material Components
+- Gradle
+
+## App Screens
+
+### Task List
+
+The main screen contains the task form, priority selector, action buttons, task counter, and list of saved tasks.
+
+### Task Details
+
+The details screen displays the selected task title, priority, and description.
 
 ## Project Structure
 
 ```text
-Lab04/
-  app/
-    src/
-      main/
-        java/com/example/lab04/
-          MainActivity.java
-          Screen2Activity.java
-        res/layout/
-          activity_main.xml
-          activity_screen2.xml
-        res/values/
-          strings.xml
+app/src/main/
+  java/com/example/lab04/
+    MainActivity.java
+    Screen2Activity.java
+  res/layout/
+    activity_main.xml
+    activity_screen2.xml
+  res/values/
+    strings.xml
 ```
 
-## Main Files
+## Implementation
 
-`MainActivity.java`
+`MainActivity` stores tasks in an `ArrayList`, renders them with an `ArrayAdapter`, and handles the add, clear, open, and delete actions.
 
-Handles the main screen. It reads values from the inputs, adds tasks to an `ArrayList`, refreshes the `ListView`, opens the detail screen, and deletes tasks with a long press.
+`Screen2Activity` receives the selected task through intent extras and presents its information on a dedicated screen.
 
-`Screen2Activity.java`
-
-Receives the selected task using `Intent` extras and displays its details.
-
-`activity_main.xml`
-
-Contains the task form, priority spinner, buttons, counter, and list.
-
-`activity_screen2.xml`
-
-Contains the detail view for one selected task.
-
-## How To Run
-
-Open the `Lab04` folder in Android Studio, wait for Gradle sync, then run the app on an emulator or Android phone.
-
-You can also build it from PowerShell:
-
-```powershell
-cd Lab04
-.\gradlew.bat assembleDebug
-```
-
-To install it on a connected emulator or phone:
-
-```powershell
-.\gradlew.bat installDebug
-```
-
-## Manual Test
-
-1. Open the app.
-2. Confirm that three starter tasks are displayed.
-3. Enter a task title.
-4. Enter a task description.
-5. Select a priority.
-6. Press `Ajouter`.
-7. Confirm that the new task appears in the list.
-8. Confirm that the task counter increases.
-9. Tap a task.
-10. Confirm that the detail screen opens with the correct title, priority, and description.
-11. Press `Retour`.
-12. Long-press a task.
-13. Confirm that the task is removed and the counter decreases.
-14. Try pressing `Ajouter` with an empty title.
-15. Confirm that an error message appears.
-
-## Verification
-
-The project was verified with:
+## Build
 
 ```powershell
 .\gradlew.bat assembleDebug
-```
-
-Result:
-
-```text
-BUILD SUCCESSFUL
 ```
